@@ -1,12 +1,12 @@
-Summary: A program which will display a fortune.
-Name: fortune-mod
-Version: 1.0
-Release: 9
-Copyright: BSD
-Group: Amusements/Games
-Source: ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune-mod-9708.tar.gz
-Patch0: fortune-mod-offense.patch
-BuildRoot: /var/tmp/fortune-mod-root
+Summary:	A program which will display a fortune.
+Name:		fortune-mod
+Version:	1.0
+Release:	10
+Copyright:	BSD
+Group:		Amusements/Games
+Source:		ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune-mod-9708.tar.gz
+Patch0:		fortune-mod-offense.patch
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 Fortune-mod contains the ever-popular fortune program. Want a little
@@ -20,32 +20,38 @@ bits o' wit.
 
 %prep
 %setup -q -n fortune-mod-9708
-%patch0 -p1 -b .mike
+%patch0 -p1
 
 %build
 make 
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/usr/{games,sbin,man/man1,man/man6,share/games/fortune}
+mkdir -p $RPM_BUILD_ROOT{%{_prefix}/games,%{_sbindir},%{_mandir}/man{1,6},%{_datadir}/games/fortune}
 
-make	FORTDIR=$RPM_BUILD_ROOT/usr/games \
-	COOKIEDIR=$RPM_BUILD_ROOT/usr/share/games/fortunes \
-	BINDIR=$RPM_BUILD_ROOT/usr/sbin \
-	BINMANDIR=$RPM_BUILD_ROOT/usr/man/man1 \
-	FORTMANDIR=$RPM_BUILD_ROOT/usr/man/man6 \
+make	FORTDIR=$RPM_BUILD_ROOT%{_prefix}/games \
+	COOKIEDIR=$RPM_BUILD_ROOT%{_datadir}/games/fortunes \
+	BINDIR=$RPM_BUILD_ROOT%{_sbindir} \
+	BINMANDIR=$RPM_BUILD_ROOT%{_mandir}/man1 \
+	FORTMANDIR=$RPM_BUILD_ROOT%{_mandir}/man6 \
 	install
+
+strip --strip-unneeded $RPM_BUILD_ROOT{%{_sbindir}/*,%{_prefix}/games/fortune} || :
+
+rm -f $RPM_BUILD_ROOT%{_mandir}/man1/unstr.1
+echo ".so strfile.1" > $RPM_BUILD_ROOT%{_mandir}/man1/unstr.1
+
+gzip -9nf README ChangeLog TODO $RPM_BUILD_ROOT%{_mandir}/man{1,6}/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root)
-%doc README ChangeLog TODO
-/usr/games/fortune
-/usr/sbin/strfile
-/usr/sbin/unstr
-/usr/share/games/fortunes
-/usr/man/man6/fortune.6
-/usr/man/man1/strfile.1
-/usr/man/man1/unstr.1
+%defattr(644,root,root,755)
+%doc {README,ChangeLog,TODO}.gz
+%attr(755,root,root) %{_prefix}/games/fortune
+%attr(755,root,root) %{_sbindir}/strfile
+%attr(755,root,root) %{_sbindir}/unstr
+%{_datadir}/games/fortunes
+%{_mandir}/man6/fortune.6.gz
+%{_mandir}/man1/*
