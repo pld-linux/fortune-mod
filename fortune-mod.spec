@@ -1,7 +1,7 @@
 Summary:	A program which will display a fortune.
 Name:		fortune-mod
 Version:	1.0
-Release:	10
+Release:	11
 License:	BSD
 Group:		Amusements/Games
 Source0:	ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/%{name}-9708.tar.gz
@@ -30,7 +30,7 @@ by ka¿dy otrzyma³ swoj± dawkê m±dro¶ci przy logowaniu.
 %patch0 -p1
 
 %build
-%{__make} 
+%{__make} CFLAGS="$RPM_OPT_FLAGS \\\$(DEFINES)"
 
 %install
 rm -rf $RPM_BUILD_ROOT
