@@ -11,11 +11,13 @@ Summary(ru):	Программа, печатающая "fortune" (случайно выбранное сообщение)
 Summary(uk):	Програма, яка друку╓ "fortune" (випадково вибране пов╕домлення)
 Name:		fortune-mod
 Version:	1.0
-Release:	23
+Release:	24
 License:	BSD
 Group:		Applications/Games
 Source0:	ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/%{name}-9708.tar.gz
 Patch0:		%{name}-offense.patch
+Patch1:		%{name}-32bit-offset.patch
+Patch2:		%{name}-display-source.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -130,6 +132,8 @@ Ten pakiet zawiera angielskie pliki z danymi dla fortunek.
 %prep
 %setup -q -n fortune-mod-9708
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %build
 %{__make} CFLAGS="%{rpmcflags} \\\$(DEFINES)"
