@@ -1,0 +1,57 @@
+--- fortune-mod-1.99.1/fortune/fortune.c.orig	2004-03-05 14:29:56.000000000 +0100
++++ fortune-mod-1.99.1/fortune/fortune.c	2004-03-07 18:21:39.218004384 +0100
+@@ -267,11 +267,11 @@
+ void usage(void)
+ {
+     (void) fprintf(stderr, "%s\n",program_version());
+-    (void) fprintf(stderr, "fortune [-a");
++    (void) fprintf(stderr, "fortune [-ac");
+ #ifdef	DEBUG
+     (void) fprintf(stderr, "D");
+ #endif /* DEBUG */
+-    (void) fprintf(stderr, "f");
++    (void) fprintf(stderr, "ef");
+ #ifndef	NO_REGEX
+     (void) fprintf(stderr, "i");
+ #endif /* NO_REGEX */
+--- fortune-mod-1.99.1/fortune/fortune.6.orig	2004-03-05 14:29:56.000000000 +0100
++++ fortune-mod-1.99.1/fortune/fortune.6	2004-03-07 18:23:38.720837192 +0100
+@@ -44,8 +44,9 @@
+ .Nd print a random, hopefully interesting, adage
+ .Sh SYNOPSIS
+ .Nm fortune
+-.Op Fl aefilosw
++.Op Fl acefilosw
+ .Op Fl m Ar pattern 
++.Op Fl n Ar number
+ .Oo 
+ .Op Ar N% 
+ .Ar file/dir/all
+@@ -64,6 +65,8 @@
+ (See the
+ .Fl o
+ option for more information on offensive fortunes.)
++.It Fl c
++Show the name of fortune file displayed maxim comes from.
+ .It Fl e
+ Consider all fortune files to be of equal size (see discussion below
+ on multiple files).
+@@ -78,6 +81,9 @@
+ See
+ .Xr regex 3
+ for a description of patterns.
++.It Fl n
++Set maximum number of character in a "short" fortune (to be used
++instead of default 160).
+ .It Fl o
+ Choose only from potentially offensive aphorisms.
+ .Bf -symbolic
+@@ -110,6 +116,8 @@
+ number of characters in the message.
+ This is useful if it is executed as part of the logout procedure
+ to guarantee that the message can be read before the screen is cleared.
++.It Fl v
++Display version information and exit.
+ .El
+ .Pp
+ The user may specify alternate sayings.
