@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _with_offensive - include offensive fortunes
+%bcond_with offensive		# include offensive fortunes
 #
 Summary:	A program which will display a fortune
 Summary(cs):	Program suenka s vitbou (fortune cookie) s opravami chyb
@@ -157,7 +157,7 @@ pakiet jest tym, czego potrzebujesz.
 %patch2 -p1
 
 %build
-%{__make} CFLAGS="%{rpmcflags} \\\$(DEFINES)" %{?_with_offensive:OFFENSIVE=1}
+%{__make} CFLAGS="%{rpmcflags} \\\$(DEFINES)" %{?with_offensive:OFFENSIVE=1}
 %{__make} fortune/fortune.man
 
 %install
@@ -170,7 +170,7 @@ install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man{1,6},%{_datadir}/games/for
 	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
 	BINMANDIR=$RPM_BUILD_ROOT%{_mandir}/man1 \
 	FORTMANDIR=$RPM_BUILD_ROOT%{_mandir}/man6 \
-	%{?_with_offensive:OFFENSIVE=1}
+	%{?with_offensive:OFFENSIVE=1}
 
 rm -f $RPM_BUILD_ROOT%{_mandir}/man1/unstr.1
 
