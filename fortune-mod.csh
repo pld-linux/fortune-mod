@@ -1,3 +1,3 @@
 echo
-fortune
+fortune -s
 echo
