@@ -30,7 +30,7 @@ by ka¿dy otrzyma³ swoj± dawkê m±dro¶ci przy logowaniu.
 %patch0 -p1
 
 %build
-make 
+%{__make} 
 
 %install
 rm -rf $RPM_BUILD_ROOT
