@@ -15,10 +15,12 @@ Summary(ru):	Программа, печатающая "fortune" (случайно выбранное сообщение)
 Summary(uk):	Програма, яка друку╓ "fortune" (випадково вибране пов╕домлення)
 Name:		fortune-mod
 Version:	1.0
-Release:	25
+Release:	26
 License:	BSD
 Group:		Applications/Games
 Source0:	ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/%{name}-9708.tar.gz
+Source1:	%{name}.sh
+Source2:	%{name}.csh
 Patch0:		%{name}-offense.patch
 Patch1:		%{name}-32bit-offset.patch
 Patch2:		%{name}-display-source.patch
@@ -133,6 +135,20 @@ by ka©dy otrzymaЁ swoj╠ dawkЙ m╠dro╤ci przy logowaniu.
 
 Ten pakiet zawiera angielskie pliki z danymi dla fortunek.
 
+%package on-login
+Summary:	Displays fortune cookie on login
+Summary(pl):	Wy╤wietla fortunkЙ przy logowaniu
+Group:		Applications/Games
+Requires:	%{name}
+
+%description on-login
+If you want fortune cookie to be displayed each time when you log on
+this package is what you need.
+
+%description on-login -l pl
+Je╤li chcesz, ©eby fortunka byЁa wy╤wietlana przy ka©dym logowaniu ten
+pakiet jest tym, czego potrzebujesz.
+
 %prep
 %setup -q -n fortune-mod-9708
 %patch0 -p1
@@ -145,7 +161,10 @@ Ten pakiet zawiera angielskie pliki z danymi dla fortunek.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man{1,6},%{_datadir}/games/fortune}
+install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man{1,6},%{_datadir}/games/fortune,/etc/profile.d}
+
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d
+install %{SOURCE2} $RPM_BUILD_ROOT/etc/profile.d
 
 %{__make} install \
 	FORTDIR=$RPM_BUILD_ROOT%{_bindir} \
@@ -172,3 +191,7 @@ rm -rf $RPM_BUILD_ROOT
 %files data
 %defattr(644,root,root,755)
 %{_datadir}/games/fortunes/*
+%defattr(644,root,root,755)
+%attr(755,root,root) /etc/profile.d/*
+
+%files on-login
