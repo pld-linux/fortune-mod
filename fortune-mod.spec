@@ -2,7 +2,7 @@ Summary:	A program which will display a fortune
 Summary(pl):	Program wy¶wietlaj±cy losow± fortunkê
 Name:		fortune-mod
 Version:	1.0
-Release:	12
+Release:	13
 License:	BSD
 Group:		Applications/Games
 Source0:	ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/%{name}-9708.tar.gz
@@ -59,12 +59,13 @@ Ten pakiet zawiera angielskie pliki z danymi dla fortunek.
 
 %build
 %{__make} CFLAGS="%{rpmcflags} \\\$(DEFINES)"
+%{__make} fortune/fortune.man
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_prefix}/games,%{_sbindir},%{_mandir}/man{1,6},%{_datadir}/games/fortune}
+install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man{1,6},%{_datadir}/games/fortune}
 
-%{__make} FORTDIR=$RPM_BUILD_ROOT%{_prefix}/games \
+%{__make} FORTDIR=$RPM_BUILD_ROOT%{_bindir} \
 	COOKIEDIR=$RPM_BUILD_ROOT%{_datadir}/games/fortunes \
 	BINDIR=$RPM_BUILD_ROOT%{_sbindir} \
 	BINMANDIR=$RPM_BUILD_ROOT%{_mandir}/man1 \
@@ -82,7 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {README,ChangeLog,TODO}.gz
-%attr(755,root,root) %{_prefix}/games/fortune
+%attr(755,root,root) %{_bindir}/fortune
 %attr(755,root,root) %{_sbindir}/strfile
 %attr(755,root,root) %{_sbindir}/unstr
 %{_mandir}/man6/fortune.6*
