@@ -5,8 +5,6 @@ Version:	1.0
 Release:	12
 License:	BSD
 Group:		Applications/Games
-Group(de):	Applikationen/Spiele
-Group(pl):	Aplikacje/Gry
 Source0:	ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/%{name}-9708.tar.gz
 Patch0:		%{name}-offense.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -32,8 +30,6 @@ by ka¿dy otrzyma³ swoj± dawkê m±dro¶ci przy logowaniu.
 Summary:	A program which will display a fortune
 Summary(pl):	Program wy¶wietlaj±cy losow± fortunkê
 Group:		Applications/Games
-Group(de):	Applikationen/Spiele
-Group(pl):	Aplikacje/Gry
 Requires:	%{name}
 
 %description data
