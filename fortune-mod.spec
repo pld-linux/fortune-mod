@@ -19,6 +19,7 @@ Release:	27
 License:	BSD
 Group:		Applications/Games
 Source0:	ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/%{name}-9708.tar.gz
+# Source0-md5:	81a87a44f9d94b0809dfc2b7b140a379
 Source1:	%{name}.sh
 Source2:	%{name}.csh
 Patch0:		%{name}-offense.patch
