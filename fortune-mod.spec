@@ -14,12 +14,13 @@ Summary(pt_BR):	Fortune: frases famosas e ditados
 Summary(ru):	Программа, печатающая "fortune" (случайно выбранное сообщение)
 Summary(uk):	Програма, яка друку╓ "fortune" (випадково вибране пов╕домлення)
 Name:		fortune-mod
-Version:	1.0
-Release:	28
+Version:	1.99.1
+Release:	0.1
 License:	BSD
 Group:		Applications/Games
-Source0:	ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/%{name}-9708.tar.gz
-# Source0-md5:	81a87a44f9d94b0809dfc2b7b140a379
+#Source0:	ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/%{name}-9708.tar.gz
+Source0:	http://www.redellipse.net/code/downloads/%{name}-%{version}.tar.gz
+# Source0-md5:	f208805b3b712e32997d7667e0ec52d8
 Source1:	%{name}.sh
 Source2:	%{name}.csh
 Patch0:		%{name}-offense.patch
@@ -151,13 +152,16 @@ Je╤li chcesz, ©eby fortunka byЁa wy╤wietlana przy ka©dym logowaniu ten
 pakiet jest tym, czego potrzebujesz.
 
 %prep
-%setup -q -n fortune-mod-9708
+%setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
+#%patch1 -p1
+#%patch2 -p1
 
 %build
-%{__make} CFLAGS="%{rpmcflags} \\\$(DEFINES)" %{?with_offensive:OFFENSIVE=1}
+%{__make} \
+	CFLAGS="%{rpmcflags} \\\$(DEFINES)" \
+	%{?with_offensive:OFFENSIVE=1}
+
 %{__make} fortune/fortune.man
 
 %install
@@ -172,7 +176,7 @@ install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man{1,6},%{_datadir}/games/for
 	FORTMANDIR=$RPM_BUILD_ROOT%{_mandir}/man6 \
 	%{?with_offensive:OFFENSIVE=1}
 
-rm -f $RPM_BUILD_ROOT%{_mandir}/man1/unstr.1
+rm -f $RPM_BUILD_ROOT%{_mandir}/man1/unstr.1*
 
 install %{SOURCE1} %{SOURCE2} $RPM_BUILD_ROOT/etc/profile.d
 
