@@ -15,7 +15,7 @@ Summary(ru):	Программа, печатающая "fortune" (случайно выбранное сообщение)
 Summary(uk):	Програма, яка друку╓ "fortune" (випадково вибране пов╕домлення)
 Name:		fortune-mod
 Version:	1.0
-Release:	26
+Release:	27
 License:	BSD
 Group:		Applications/Games
 Source0:	ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/%{name}-9708.tar.gz
@@ -163,9 +163,6 @@ pakiet jest tym, czego potrzebujesz.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man{1,6},%{_datadir}/games/fortune,/etc/profile.d}
 
-install %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d
-install %{SOURCE2} $RPM_BUILD_ROOT/etc/profile.d
-
 %{__make} install \
 	FORTDIR=$RPM_BUILD_ROOT%{_bindir} \
 	COOKIEDIR=$RPM_BUILD_ROOT%{_datadir}/games/fortunes \
@@ -175,6 +172,9 @@ install %{SOURCE2} $RPM_BUILD_ROOT/etc/profile.d
 	%{?_with_offensive:OFFENSIVE=1}
 
 rm -f $RPM_BUILD_ROOT%{_mandir}/man1/unstr.1
+
+install %{SOURCE1} %{SOURCE2} $RPM_BUILD_ROOT/etc/profile.d
+
 echo ".so strfile.1" > $RPM_BUILD_ROOT%{_mandir}/man1/unstr.1
 
 %clean
@@ -192,6 +192,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_datadir}/games/fortunes/*
 %defattr(644,root,root,755)
-%attr(755,root,root) /etc/profile.d/*
 
 %files on-login
+%defattr(644,root,root,755)
+%attr(755,root,root) /etc/profile.d/*
