@@ -67,7 +67,7 @@ install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man{1,6},%{_datadir}/games/for
 
 %{__make} FORTDIR=$RPM_BUILD_ROOT%{_bindir} \
 	COOKIEDIR=$RPM_BUILD_ROOT%{_datadir}/games/fortunes \
-	BINDIR=$RPM_BUILD_ROOT%{_sbindir} \
+	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
 	BINMANDIR=$RPM_BUILD_ROOT%{_mandir}/man1 \
 	FORTMANDIR=$RPM_BUILD_ROOT%{_mandir}/man6 \
 	install
@@ -83,9 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {README,ChangeLog,TODO}.gz
-%attr(755,root,root) %{_bindir}/fortune
-%attr(755,root,root) %{_sbindir}/strfile
-%attr(755,root,root) %{_sbindir}/unstr
+%attr(755,root,root) %{_bindir}/*
 %{_mandir}/man6/fortune.6*
 %{_mandir}/man1/*
 
