@@ -24,6 +24,7 @@ Source0:	http://www.redellipse.net/code/downloads/%{name}-%{version}.tar.gz
 Source1:	%{name}.sh
 Source2:	%{name}.csh
 Patch0:		%{name}-usage.patch
+BuildRequires:	recode
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
