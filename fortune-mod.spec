@@ -6,7 +6,7 @@ Copyright:	BSD
 Group:		Amusements/Games
 Source:		ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune-mod-9708.tar.gz
 Patch0:		fortune-mod-offense.patch
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Fortune-mod contains the ever-popular fortune program. Want a little
