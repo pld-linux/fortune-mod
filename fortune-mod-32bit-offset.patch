@@ -1,0 +1,172 @@
+diff -ur fortune-mod-9708/fortune/fortune.c fortune-mod-9708-/fortune/fortune.c
+--- fortune-mod-9708/fortune/fortune.c	Thu Aug 28 21:43:52 1997
++++ fortune-mod-9708-/fortune/fortune.c	Tue Jun  4 17:20:25 2002
+@@ -131,7 +131,7 @@
+ #define	MINW	6		/* minimum wait if desired */
+ #define	CPERS	20		/* # of chars for each sec */
+ 
+-#define	POS_UNKNOWN	((off_t) -1)	/* pos for file unknown */
++#define	POS_UNKNOWN	((uint32_t) -1)	/* pos for file unknown */
+ #define	NO_PROB		(-1)	/* no prob specified for file */
+ 
+ #ifdef DEBUG
+@@ -146,7 +146,7 @@
+ {
+     int percent;
+     int fd, datfd;
+-    off_t pos;
++    uint32_t pos;
+     FILE *inf;
+     char *name;
+     char *path;
+@@ -184,7 +184,7 @@
+   Num_files, Num_kids,		/* totals of files and children. */
+   SLEN = 160;			/* max. characters in a "short" fortune */
+ 
+-off_t Seekpts[2];		/* seek pointers to fortunes */
++uint32_t Seekpts[2];		/* seek pointers to fortunes */
+ 
+ FILEDESC *File_list = NULL,	/* Head of file list */
+  *File_tail = NULL;		/* Tail of file list */
+diff -ur fortune-mod-9708/util/strfile.c fortune-mod-9708-/util/strfile.c
+--- fortune-mod-9708/util/strfile.c	Thu May  1 06:24:01 1997
++++ fortune-mod-9708-/util/strfile.c	Tue Jun  4 17:11:34 2002
+@@ -135,7 +135,7 @@
+ typedef struct
+ {
+     char first;
+-    off_t pos;
++    uint32_t pos;
+ }
+ STR;
+ 
+@@ -150,7 +150,7 @@
+ int Xflag = FALSE;		/* set rotated bit */
+ long Num_pts = 0;		/* number of pointers/strings */
+ 
+-off_t *Seekpts;
++uint32_t *Seekpts;
+ 
+ FILE *Sort_1, *Sort_2;		/* pointers for sorting */
+ 
+@@ -228,9 +228,9 @@
+  * add_offset:
+  *      Add an offset to the list, or write it out, as appropriate.
+  */
+-void add_offset(FILE * fp, off_t off)
++void add_offset(FILE * fp, uint32_t off)
+ {
+-    off_t net;
++    uint32_t net;
+ 
+     if (!STORING_PTRS)
+     {
+@@ -249,9 +249,9 @@
+  * fix_last_offset:
+  *     Used when we have two separators in a row.
+  */
+-void fix_last_offset(FILE * fp, off_t off)
++void fix_last_offset(FILE * fp, uint32_t off)
+ {
+-    off_t net;
++    uint32_t net;
+ 
+     if (!STORING_PTRS)
+     {
+@@ -324,7 +324,7 @@
+   do_order(void)
+ {
+     register long i;
+-    register off_t *lp;
++    register uint32_t *lp;
+     register STR *fp;
+ 
+     Sort_1 = fopen(Infile, "r");
+@@ -375,8 +375,8 @@
+ void randomize(void)
+ {
+     register int cnt, i;
+-    register off_t tmp;
+-    register off_t *sp;
++    register uint32_t tmp;
++    register uint32_t *sp;
+     extern time_t time(time_t *);
+ 
+     srandom((int) (time((time_t *) NULL) + getpid()));
+@@ -413,7 +413,7 @@
+ {
+     register unsigned char *sp;
+     register FILE *inf, *outf;
+-    register off_t last_off, length, pos, *p;
++    register uint32_t last_off, length, pos, *p;
+     register int first, cnt;
+     register char *nsp;
+     register STR *fp;
+diff -ur fortune-mod-9708/util/strfile.h fortune-mod-9708-/util/strfile.h
+--- fortune-mod-9708/util/strfile.h	Thu Mar 23 12:04:08 1995
++++ fortune-mod-9708-/util/strfile.h	Tue Jun  4 17:04:32 2002
+@@ -41,16 +41,18 @@
+ #define	STR_ENDSTRING(line,tbl) \
+ 	((line)[0] == (tbl).str_delim && (line)[1] == '\n')
+ 
++#include <inttypes.h>
++
+ typedef struct {				/* information table */
+ #define	VERSION		1
+-	unsigned long	str_version;		/* version number */
+-	unsigned long	str_numstr;		/* # of strings in the file */
+-	unsigned long	str_longlen;		/* length of longest string */
+-	unsigned long	str_shortlen;		/* length of shortest string */
++	uint32_t	str_version;		/* version number */
++	uint32_t	str_numstr;		/* # of strings in the file */
++	uint32_t	str_longlen;		/* length of longest string */
++	uint32_t	str_shortlen;		/* length of shortest string */
+ #define	STR_RANDOM	0x1			/* randomized pointers */
+ #define	STR_ORDERED	0x2			/* ordered pointers */
+ #define	STR_ROTATED	0x4			/* rot-13'd text */
+-	unsigned long	str_flags;		/* bit field for flags */
++	uint32_t	str_flags;		/* bit field for flags */
+ 	unsigned char	stuff[4];		/* long aligned space */
+ #define	str_delim	stuff[0]		/* delimiting character */
+ } STRFILE;
+diff -ur fortune-mod-9708/util/unstr.c fortune-mod-9708-/util/unstr.c
+--- fortune-mod-9708/util/unstr.c	Fri Apr 18 08:27:01 1997
++++ fortune-mod-9708-/util/unstr.c	Tue Jun  4 17:18:25 2002
+@@ -175,7 +175,7 @@
+ {
+     register int i;
+     register unsigned char *sp;
+-    auto off_t pos;
++    auto uint32_t pos;
+     char buf[BUFSIZ];
+     int printedsome;
+ 
+diff -ur fortune-mod-9708-/util/strfile.8 fortune-mod-9708/util/strfile.8
+--- fortune-mod-9708-/util/strfile.8	Thu Mar 23 12:04:07 1995
++++ fortune-mod-9708/util/strfile.8	Tue Jun  4 17:28:16 2002
+@@ -104,18 +104,19 @@
+ The format of the header is:
+ .Bd -literal
+ #define	VERSION	1
+-unsigned long	str_version;	/* version number */
+-unsigned long	str_numstr;	/* # of strings in the file */
+-unsigned long	str_longlen;	/* length of longest string */
+-unsigned long	str_shortlen;	/* length of shortest string */
++uint32_t	str_version;	/* version number */
++uint32_t	str_numstr;	/* # of strings in the file */
++uint32_t	str_longlen;	/* length of longest string */
++uint32_t	str_shortlen;	/* length of shortest string */
+ #define	STR_RANDOM	0x1	/* randomized pointers */
+ #define	STR_ORDERED	0x2	/* ordered pointers */
+ #define	STR_ROTATED	0x4	/* rot-13'd text */
+-unsigned long	str_flags;	/* bit field for flags */
++uint32_t	str_flags;	/* bit field for flags */
+ char str_delim;			/* delimiting character */
+ .Ed
+ .Pp
+-All fields are written in network byte order.
++All fields are written in network byte order. uint32_t is 32-bit wide
++unsigned integer, as defined in <inttypes.h>.
+ .Pp
+ The purpose of
+ .Nm unstr
