@@ -1,5 +1,5 @@
-Summary:	A program which will display a fortune.
-Summary(pl):	Program wy¶wietlaj±cy losow± fortunkê.
+Summary:	A program which will display a fortune
+Summary(pl):	Program wy¶wietlaj±cy losow± fortunkê
 Name:		fortune-mod
 Version:	1.0
 Release:	12
@@ -29,8 +29,8 @@ poczuciem humoru mog± dodaæ fortune do plików .login u¿ytkowników tak,
 by ka¿dy otrzyma³ swoj± dawkê m±dro¶ci przy logowaniu.
 
 %package data
-Summary:	A program which will display a fortune.
-Summary(pl):	Program wy¶wietlaj±cy losow± fortunkê.
+Summary:	A program which will display a fortune
+Summary(pl):	Program wy¶wietlaj±cy losow± fortunkê
 Group:		Applications/Games
 Group(de):	Applikationen/Spiele
 Group(pl):	Aplikacje/Gry
@@ -62,13 +62,13 @@ Ten pakiet zawiera angielskie pliki z danymi dla fortunek.
 %patch0 -p1
 
 %build
-%{__make} CFLAGS="$RPM_OPT_FLAGS \\\$(DEFINES)"
+%{__make} CFLAGS="%{rpmcflags} \\\$(DEFINES)"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_prefix}/games,%{_sbindir},%{_mandir}/man{1,6},%{_datadir}/games/fortune}
 
-make	FORTDIR=$RPM_BUILD_ROOT%{_prefix}/games \
+%{__make} FORTDIR=$RPM_BUILD_ROOT%{_prefix}/games \
 	COOKIEDIR=$RPM_BUILD_ROOT%{_datadir}/games/fortunes \
 	BINDIR=$RPM_BUILD_ROOT%{_sbindir} \
 	BINMANDIR=$RPM_BUILD_ROOT%{_mandir}/man1 \
@@ -89,7 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_prefix}/games/fortune
 %attr(755,root,root) %{_sbindir}/strfile
 %attr(755,root,root) %{_sbindir}/unstr
-%{_mandir}/man6/fortune.6.gz
+%{_mandir}/man6/fortune.6*
 %{_mandir}/man1/*
 
 %files data
