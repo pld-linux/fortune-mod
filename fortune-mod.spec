@@ -23,9 +23,8 @@ Source0:	http://www.redellipse.net/code/downloads/%{name}-%{version}.tar.gz
 # Source0-md5:	f208805b3b712e32997d7667e0ec52d8
 Source1:	%{name}.sh
 Source2:	%{name}.csh
-Patch0:		%{name}-offense.patch
-Patch1:		%{name}-32bit-offset.patch
-Patch2:		%{name}-display-source.patch
+Patch0:		%{name}-32bit-offset.patch
+Patch1:		%{name}-display-source.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -153,9 +152,8 @@ pakiet jest tym, czego potrzebujesz.
 
 %prep
 %setup -q
-%patch0 -p1
+#%patch0 -p1
 #%patch1 -p1
-#%patch2 -p1
 
 %build
 %{__make} \
