@@ -124,7 +124,7 @@ they log in.
 Install fortune if you want a program which will bestow these random
 bits o' wit.
 
-This package contains english data files for fortunes.
+This package contains English data files for fortunes.
 
 %description data -l pl
 Fortune-mod zawiera wci±¿ popularny program fortune ("cytat dnia",
