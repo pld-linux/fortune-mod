@@ -8,7 +8,7 @@ Summary(da):	fortune-cookie program med mange fejl rettelser
 Summary(de):	GlЭckskeks-Programm mit Bugfixes
 Summary(es):	Fortune: frases famosas y refranes
 Summary(fi):	Paranneltu fortnue-ohjelma
-Summary(fr):	Programme fortune cookie avec correction de bugs.
+Summary(fr):	Programme fortune cookie avec correction de bugs
 Summary(pl):	Program wy╤wietlaj╠cy losow╠ fortunkЙ
 Summary(pt_BR):	Fortune: frases famosas e ditados
 Summary(ru):	Программа, печатающая "fortune" (случайно выбранное сообщение)
