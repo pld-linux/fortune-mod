@@ -4,7 +4,7 @@ Version:	1.0
 Release:	10
 Copyright:	BSD
 Group:		Amusements/Games
-Source:		ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune-mod-9708.tar.gz
+Source:		ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/fortune-mod-9708.tar.gz
 Patch0:		fortune-mod-offense.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
