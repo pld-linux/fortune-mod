@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_with offensive		# include offensive fortunes
+%bcond_with	offensive	# include offensive fortunes
 #
 Summary:	A program which will display a fortune
 Summary(cs):	Program suenka s vitbou (fortune cookie) s opravami chyb
@@ -23,8 +23,7 @@ Source0:	http://www.redellipse.net/code/downloads/%{name}-%{version}.tar.gz
 # Source0-md5:	f208805b3b712e32997d7667e0ec52d8
 Source1:	%{name}.sh
 Source2:	%{name}.csh
-Patch0:		%{name}-32bit-offset.patch
-Patch1:		%{name}-display-source.patch
+Patch0:		%{name}-usage.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -152,8 +151,7 @@ pakiet jest tym, czego potrzebujesz.
 
 %prep
 %setup -q
-#%patch0 -p1
-#%patch1 -p1
+%patch0 -p1
 
 %build
 %{__make} \
