@@ -2,28 +2,28 @@ Summary:	A program which will display a fortune.
 Name:		fortune-mod
 Version:	1.0
 Release:	10
-Copyright:	BSD
+License:	BSD
 Group:		Amusements/Games
-Source:		ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/fortune-mod-9708.tar.gz
+Source0:	ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/%{name}-9708.tar.gz
 Patch0:		fortune-mod-offense.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Fortune-mod contains the ever-popular fortune program. Want a little
-bit of random wisdom revealed to you when you log in? Fortune's
-your program. Fun-loving system administrators can add fortune to
-users' .login files, so that the users get their dose of wisdom 
-each time they log in.
+bit of random wisdom revealed to you when you log in? Fortune's your
+program. Fun-loving system administrators can add fortune to users'
+.login files, so that the users get their dose of wisdom each time
+they log in.
 
 Install fortune if you want a program which will bestow these random
 bits o' wit.
 
 %description -l pl
-Fortune-mod zawiera wci±¿ popularny program fortune ("cytat dnia", 
+Fortune-mod zawiera wci±¿ popularny program fortune ("cytat dnia",
 "przepowiednia"). Masz ochotê na odrobinê m±dro¶ci przekazanej Ci
-podczas logowania? Program fortune jest dla Ciebie. Administratorzy z poczuciem
-humoru mog± dodaæ fortune do plików .login u¿ytkowników tak, by ka¿dy
-otrzyma³ swoj± dawkê m±dro¶ci przy logowaniu.
+podczas logowania? Program fortune jest dla Ciebie. Administratorzy z
+poczuciem humoru mog± dodaæ fortune do plików .login u¿ytkowników tak,
+by ka¿dy otrzyma³ swoj± dawkê m±dro¶ci przy logowaniu.
 
 %prep
 %setup -q -n fortune-mod-9708
@@ -34,7 +34,7 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT{%{_prefix}/games,%{_sbindir},%{_mandir}/man{1,6},%{_datadir}/games/fortune}
+install -d $RPM_BUILD_ROOT{%{_prefix}/games,%{_sbindir},%{_mandir}/man{1,6},%{_datadir}/games/fortune}
 
 make	FORTDIR=$RPM_BUILD_ROOT%{_prefix}/games \
 	COOKIEDIR=$RPM_BUILD_ROOT%{_datadir}/games/fortunes \
