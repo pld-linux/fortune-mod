@@ -124,7 +124,7 @@ they log in.
 Install fortune if you want a program which will bestow these random
 bits o' wit.
 
-This package contains English data files for fortunes.
+This package contains English data files for fortune-mod.
 
 %description data -l pl
 Fortune-mod zawiera wci±¿ popularny program fortune ("cytat dnia",
@@ -133,7 +133,7 @@ podczas logowania? Program fortune jest dla Ciebie. Administratorzy z
 poczuciem humoru mog± dodaæ fortune do plików .login u¿ytkowników tak,
 by ka¿dy otrzyma³ swoj± dawkê m±dro¶ci przy logowaniu.
 
-Ten pakiet zawiera angielskie pliki z danymi dla fortunek.
+Ten pakiet zawiera angielskie pliki z danymi dla fortune-mod.
 
 %package on-login
 Summary:	Displays fortune cookie on login
