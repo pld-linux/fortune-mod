@@ -3,7 +3,7 @@ Name:		fortune-mod
 Version:	1.0
 Release:	11
 License:	BSD
-Group:		Amusements/Games
+Group:		Games
 Source0:	ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/%{name}-9708.tar.gz
 Patch0:		fortune-mod-offense.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
