@@ -1,3 +1,7 @@
+#
+# Conditional build:
+# _with_offensive - include offensive fortunes
+#
 Summary:	A program which will display a fortune
 Summary(cs):	Program suenka s vitbou (fortune cookie) s opravami chyb
 Summary(da):	fortune-cookie program med mange fejl rettelser
@@ -11,7 +15,7 @@ Summary(ru):	Программа, печатающая "fortune" (случайно выбранное сообщение)
 Summary(uk):	Програма, яка друку╓ "fortune" (випадково вибране пов╕домлення)
 Name:		fortune-mod
 Version:	1.0
-Release:	24
+Release:	25
 License:	BSD
 Group:		Applications/Games
 Source0:	ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/%{name}-9708.tar.gz
@@ -136,7 +140,7 @@ Ten pakiet zawiera angielskie pliki z danymi dla fortunek.
 %patch2 -p1
 
 %build
-%{__make} CFLAGS="%{rpmcflags} \\\$(DEFINES)"
+%{__make} CFLAGS="%{rpmcflags} \\\$(DEFINES)" %{?_with_offensive:OFFENSIVE=1}
 %{__make} fortune/fortune.man
 
 %install
@@ -148,7 +152,8 @@ install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man{1,6},%{_datadir}/games/for
 	COOKIEDIR=$RPM_BUILD_ROOT%{_datadir}/games/fortunes \
 	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
 	BINMANDIR=$RPM_BUILD_ROOT%{_mandir}/man1 \
-	FORTMANDIR=$RPM_BUILD_ROOT%{_mandir}/man6
+	FORTMANDIR=$RPM_BUILD_ROOT%{_mandir}/man6 \
+	%{?_with_offensive:OFFENSIVE=1}
 
 rm -f $RPM_BUILD_ROOT%{_mandir}/man1/unstr.1
 echo ".so strfile.1" > $RPM_BUILD_ROOT%{_mandir}/man1/unstr.1
@@ -162,7 +167,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man6/fortune.6*
 %{_mandir}/man1/*
+%dir %{_datadir}/games/fortunes
 
 %files data
 %defattr(644,root,root,755)
-%{_datadir}/games/fortunes
+%{_datadir}/games/fortunes/*
