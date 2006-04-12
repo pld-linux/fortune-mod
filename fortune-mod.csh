@@ -1,8 +1,7 @@
 #!/bin/csh
+# skip fortunes on cron mails.
+tty -s || exit 0
 
-tty -s
-if ($status == 0) then
-	echo
-	fortune -s
-	echo
-endif
+echo
+fortune -s
+echo
