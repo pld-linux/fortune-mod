@@ -1,6 +1,7 @@
 #!/bin/sh
 # skip fortunes on cron mails.
-if (tty -s); then
+tty -s
+if [ $? -eq 0 ]; then
 	echo
 	fortune -s
 	echo
