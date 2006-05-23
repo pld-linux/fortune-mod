@@ -15,7 +15,7 @@ Summary(ru):	Программа, печатающая "fortune" (случайно выбранное сообщение)
 Summary(uk):	Програма, яка друку╓ "fortune" (випадково вибране пов╕домлення)
 Name:		fortune-mod
 Version:	1.99.1
-Release:	1
+Release:	2
 License:	BSD
 Group:		Applications/Games
 #Source0:	ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/%{name}-9708.tar.gz
