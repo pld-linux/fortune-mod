@@ -1,0 +1,1 @@
+- moved unstr and strfile to %{_bindir}
