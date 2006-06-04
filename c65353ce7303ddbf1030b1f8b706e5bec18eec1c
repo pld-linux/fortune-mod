@@ -1,0 +1,6 @@
+- rel 24, stbr
+- added two patches:
+  - fix to always use 32 bit file offsets in .dat files (as they are stored
+    in %{_datadir})
+  - support for -d option, to display source of fortune (i.e. file it comes
+    from)
