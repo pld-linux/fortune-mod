@@ -1,0 +1,4 @@
+- modified %install for proper generation fortune man
+- moved /usr/games/fortune to %{_bindir}
+- release 13
+- STBR
