@@ -15,7 +15,7 @@ Summary(ru):	Программа, печатающая "fortune" (случайно выбранное сообщение)
 Summary(uk):	Програма, яка друку╓ "fortune" (випадково вибране пов╕домлення)
 Name:		fortune-mod
 Version:	1.99.1
-Release:	2
+Release:	3
 License:	BSD
 Group:		Applications/Games
 #Source0:	ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/%{name}-9708.tar.gz
@@ -175,9 +175,8 @@ install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man{1,6},%{_datadir}/games/for
 
 rm -f $RPM_BUILD_ROOT%{_mandir}/man1/unstr.1*
 
-install %{SOURCE1} %{SOURCE2} $RPM_BUILD_ROOT/etc/profile.d
-
-echo ".so strfile.1" > $RPM_BUILD_ROOT%{_mandir}/man1/unstr.1
+cp -a %{SOURCE1} %{SOURCE2} $RPM_BUILD_ROOT/etc/profile.d
+echo '.so strfile.1' > $RPM_BUILD_ROOT%{_mandir}/man1/unstr.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -197,4 +196,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files on-login
 %defattr(644,root,root,755)
-%attr(755,root,root) /etc/profile.d/*
+/etc/profile.d/*
