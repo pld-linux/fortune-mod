@@ -3,16 +3,16 @@
 %bcond_with	offensive	# include offensive fortunes
 #
 Summary:	A program which will display a fortune
-Summary(cs):	Program suenka s vitbou (fortune cookie) s opravami chyb
-Summary(da):	fortune-cookie program med mange fejl rettelser
-Summary(de):	Glückskeks-Programm mit Bugfixes
-Summary(es):	Fortune: frases famosas y refranes
-Summary(fi):	Paranneltu fortnue-ohjelma
-Summary(fr):	Programme fortune cookie avec correction de bugs
-Summary(pl):	Program wy¶wietlaj±cy losow± fortunkê
-Summary(pt_BR):	Fortune: frases famosas e ditados
-Summary(ru):	ğÒÏÇÒÁÍÍÁ, ĞÅŞÁÔÁÀİÁÑ "fortune" (ÓÌÕŞÁÊÎÏ ×ÙÂÒÁÎÎÏÅ ÓÏÏÂİÅÎÉÅ)
-Summary(uk):	ğÒÏÇÒÁÍÁ, ÑËÁ ÄÒÕËÕ¤ "fortune" (×ÉĞÁÄËÏ×Ï ×ÉÂÒÁÎÅ ĞÏ×¦ÄÏÍÌÅÎÎÑ)
+Summary(cs.UTF-8):   Program suenka s vitbou (fortune cookie) s opravami chyb
+Summary(da.UTF-8):   fortune-cookie program med mange fejl rettelser
+Summary(de.UTF-8):   GlÃ¼ckskeks-Programm mit Bugfixes
+Summary(es.UTF-8):   Fortune: frases famosas y refranes
+Summary(fi.UTF-8):   Paranneltu fortnue-ohjelma
+Summary(fr.UTF-8):   Programme fortune cookie avec correction de bugs
+Summary(pl.UTF-8):   Program wyÅ›wietlajÄ…cy losowÄ… fortunkÄ™
+Summary(pt_BR.UTF-8):   Fortune: frases famosas e ditados
+Summary(ru.UTF-8):   ĞŸÑ€Ğ¾Ğ³Ñ€Ğ°Ğ¼Ğ¼Ğ°, Ğ¿ĞµÑ‡Ğ°Ñ‚Ğ°ÑÑ‰Ğ°Ñ "fortune" (ÑĞ»ÑƒÑ‡Ğ°Ğ¹Ğ½Ğ¾ Ğ²Ñ‹Ğ±Ñ€Ğ°Ğ½Ğ½Ğ¾Ğµ ÑĞ¾Ğ¾Ğ±Ñ‰ĞµĞ½Ğ¸Ğµ)
+Summary(uk.UTF-8):   ĞŸÑ€Ğ¾Ğ³Ñ€Ğ°Ğ¼Ğ°, ÑĞºĞ° Ğ´Ñ€ÑƒĞºÑƒÑ” "fortune" (Ğ²Ğ¸Ğ¿Ğ°Ğ´ĞºĞ¾Ğ²Ğ¾ Ğ²Ğ¸Ğ±Ñ€Ğ°Ğ½Ğµ Ğ¿Ğ¾Ğ²Ñ–Ğ´Ğ¾Ğ¼Ğ»ĞµĞ½Ğ½Ñ)
 Name:		fortune-mod
 Version:	1.99.1
 Release:	3
@@ -34,84 +34,84 @@ program. Fun-loving system administrators can add fortune to users'
 .login files, so that the users get their dose of wisdom each time
 they log in.
 
-%description -l cs
-Toto je trvale oblíbenı program vìstící osud (fortune). Rád zobrazí
-náhodnou vì¹tbu, je-li spu¹tìn. Obvykle je legrace, kdy¾ se umístí do
-souboru .login pro u¾ivatele va¹eho systému, aby uvidìli nìco nového
-poka¾dé, kdy¾ se pøihlásí.
+%description -l cs.UTF-8
+Toto je trvale oblÃ­benÃ½ program vÄ›stÃ­cÃ­ osud (fortune). RÃ¡d zobrazÃ­
+nÃ¡hodnou vÄ›Å¡tbu, je-li spuÅ¡tÄ›n. Obvykle je legrace, kdyÅ¾ se umÃ­stÃ­ do
+souboru .login pro uÅ¾ivatele vaÅ¡eho systÃ©mu, aby uvidÄ›li nÄ›co novÃ©ho
+pokaÅ¾dÃ©, kdyÅ¾ se pÅ™ihlÃ¡sÃ­.
 
-%description -l da
-Dette er det altid populære 'fortune' program. Det vil gladeligt
-udskrive en tilfældig besked når det køres. Det er sjovt at have i
-.login filen for dine brugere, så de altid ser noget nyt når de logger
+%description -l da.UTF-8
+Dette er det altid populÃ¦re 'fortune' program. Det vil gladeligt
+udskrive en tilfÃ¦ldig besked nÃ¥r det kÃ¸res. Det er sjovt at have i
+.login filen for dine brugere, sÃ¥ de altid ser noget nyt nÃ¥r de logger
 ind.
 
-%description -l de
-Dies ist das beliebte Glückskeks-Programm. Es druckt eine zufällige
+%description -l de.UTF-8
+Dies ist das beliebte GlÃ¼ckskeks-Programm. Es druckt eine zufÃ¤llige
 Weisheit. Wenn Sie es in die .login-Datei Ihrer Benutzer schreiben,
 erhalten diese bei jedem Anmelden einen neuen Spruch.
 
-%description -l es
-Este es el popular programa fortune. Irá satisfactoriamente imprimir
+%description -l es.UTF-8
+Este es el popular programa fortune. IrÃ¡ satisfactoriamente imprimir
 un dictado aleatorio cuando se ejecute. Generalmente, es gracioso
 ponerlo en el .login para sus usuarios, para que vean algo nuevo
 cuuando entren.
 
-%description -l fi
-Tämä on aina suosittu fortune-ohjelma. Se tulostaa satunnaisen
-mietelauseen tai vitsin aina ajettaessa. Se yleensä laitetaan
-käynnistymään käyttäjien .login-tiedoston kautta, jolloin käyttäjä
-näkee aina uuden lauseen kirjautuessaan sisään.
+%description -l fi.UTF-8
+TÃ¤mÃ¤ on aina suosittu fortune-ohjelma. Se tulostaa satunnaisen
+mietelauseen tai vitsin aina ajettaessa. Se yleensÃ¤ laitetaan
+kÃ¤ynnistymÃ¤Ã¤n kÃ¤yttÃ¤jien .login-tiedoston kautta, jolloin kÃ¤yttÃ¤jÃ¤
+nÃ¤kee aina uuden lauseen kirjautuessaan sisÃ¤Ã¤n.
 
-%description -l fr
-Le célèbre programme fortune. Il affiche joyeusement un dicton
-aléatoire lorsqu'il est lancé. Il est généralement amusant de le
-placer dans le .login des utilisateurs d'un système pour qu'ils voient
-quelque chose de nouveau à chaque fois qu'ils se loggent.
+%description -l fr.UTF-8
+Le cÃ©lÃ¨bre programme fortune. Il affiche joyeusement un dicton
+alÃ©atoire lorsqu'il est lancÃ©. Il est gÃ©nÃ©ralement amusant de le
+placer dans le .login des utilisateurs d'un systÃ¨me pour qu'ils voient
+quelque chose de nouveau Ã  chaque fois qu'ils se loggent.
 
 Cette version supporte l'utilisation de la variable $LANG pour choisir
-automatiquemment un sous répertoire adapté à la langue de
+automatiquemment un sous rÃ©pertoire adaptÃ© Ã  la langue de
 l'utilisateur
 
-%description -l it
+%description -l it.UTF-8
 Questo e' il popolare gioco fortune. Visualizza casualmente delle
 frasi sul video. Gli utenti di solito lo aggiungono nel proprio .login
 per vedere delle frasi divertenti ogni volta si collegano.
 
-%description -l pl
-Fortune-mod zawiera wci±¿ popularny program fortune ("cytat dnia",
-"przepowiednia"). Masz ochotê na odrobinê m±dro¶ci przekazanej Ci
+%description -l pl.UTF-8
+Fortune-mod zawiera wciÄ…Å¼ popularny program fortune ("cytat dnia",
+"przepowiednia"). Masz ochotÄ™ na odrobinÄ™ mÄ…droÅ›ci przekazanej Ci
 podczas logowania? Program fortune jest dla Ciebie. Administratorzy z
-poczuciem humoru mog± dodaæ fortune do plików .login u¿ytkowników tak,
-by ka¿dy otrzyma³ swoj± dawkê m±dro¶ci przy logowaniu.
+poczuciem humoru mogÄ… dodaÄ‡ fortune do plikÃ³w .login uÅ¼ytkownikÃ³w tak,
+by kaÅ¼dy otrzymaÅ‚ swojÄ… dawkÄ™ mÄ…droÅ›ci przy logowaniu.
 
-%description -l pt_BR
-Este é o popular programa fortune. Ele irá alegremente imprimir um
-ditado aleatório quando rodar. É geralmente engraçado colocá-lo no
-.login para os seus usuários para que eles vejam algo novo toda vez
+%description -l pt_BR.UTF-8
+Este Ã© o popular programa fortune. Ele irÃ¡ alegremente imprimir um
+ditado aleatÃ³rio quando rodar. Ã‰ geralmente engraÃ§ado colocÃ¡-lo no
+.login para os seus usuÃ¡rios para que eles vejam algo novo toda vez
 que entrarem.
 
-%description -l ru
-üÔÏ ×ÓÅÇÄÁ ĞÏĞÕÌÑÒÎÁÑ ĞÒÏÇÒÁÍÍÁ fortune. âÕÄÕŞÉ ÚÁĞÕİÅÎÎÏÊ, ÏÎÁ
-×Ù×ÏÄÉÔ ÓÌÕŞÁÊÎÏ ×ÙÂÒÁÎÎÏÅ ÉÚ ÂÁÚÙ ÓÏÏÂİÅÎÉÅ. ïÂÙŞÎÏ ÅÅ ĞÏÍÅİÁÀÔ ×
-ÆÁÊÌ .login ĞÏÌØÚÏ×ÁÔÅÌÑÍ ÓÉÓÔÅÍÙ, × ÒÅÚÕÌØÔÁÔÅ ŞÅÇÏ ÏÎÉ ×ÓÑËÉÊ ÒÁÚ
-ĞÒÉ ÌÏÇÉÎÅ ×ÉÄÑÔ ŞÔÏ-ÔÏ ÎÏ×ÏÅ.
+%description -l ru.UTF-8
+Ğ­Ñ‚Ğ¾ Ğ²ÑĞµĞ³Ğ´Ğ° Ğ¿Ğ¾Ğ¿ÑƒĞ»ÑÑ€Ğ½Ğ°Ñ Ğ¿Ñ€Ğ¾Ğ³Ñ€Ğ°Ğ¼Ğ¼Ğ° fortune. Ğ‘ÑƒĞ´ÑƒÑ‡Ğ¸ Ğ·Ğ°Ğ¿ÑƒÑ‰ĞµĞ½Ğ½Ğ¾Ğ¹, Ğ¾Ğ½Ğ°
+Ğ²Ñ‹Ğ²Ğ¾Ğ´Ğ¸Ñ‚ ÑĞ»ÑƒÑ‡Ğ°Ğ¹Ğ½Ğ¾ Ğ²Ñ‹Ğ±Ñ€Ğ°Ğ½Ğ½Ğ¾Ğµ Ğ¸Ğ· Ğ±Ğ°Ğ·Ñ‹ ÑĞ¾Ğ¾Ğ±Ñ‰ĞµĞ½Ğ¸Ğµ. ĞĞ±Ñ‹Ñ‡Ğ½Ğ¾ ĞµĞµ Ğ¿Ğ¾Ğ¼ĞµÑ‰Ğ°ÑÑ‚ Ğ²
+Ñ„Ğ°Ğ¹Ğ» .login Ğ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»ÑĞ¼ ÑĞ¸ÑÑ‚ĞµĞ¼Ñ‹, Ğ² Ñ€ĞµĞ·ÑƒĞ»ÑŒÑ‚Ğ°Ñ‚Ğµ Ñ‡ĞµĞ³Ğ¾ Ğ¾Ğ½Ğ¸ Ğ²ÑÑĞºĞ¸Ğ¹ Ñ€Ğ°Ğ·
+Ğ¿Ñ€Ğ¸ Ğ»Ğ¾Ğ³Ğ¸Ğ½Ğµ Ğ²Ğ¸Ğ´ÑÑ‚ Ñ‡Ñ‚Ğ¾-Ñ‚Ğ¾ Ğ½Ğ¾Ğ²Ğ¾Ğµ.
 
-%description -l tr
-Fortune, her çağrıldığında büyük bir kitaplıktan rasgele seçeceği,
-eğlenceli bir metni görüntüleyecektir. Aşırı bilimsel ve yararlı bir
-uygulama olmamasına karşın kullanıcıların her sisteme bağlanışında
-değişik bir mesajla karşılaşmalarını sağlar.
+%description -l tr.UTF-8
+Fortune, her Ã§aÄŸrÄ±ldÄ±ÄŸÄ±nda bÃ¼yÃ¼k bir kitaplÄ±ktan rasgele seÃ§eceÄŸi,
+eÄŸlenceli bir metni gÃ¶rÃ¼ntÃ¼leyecektir. AÅŸÄ±rÄ± bilimsel ve yararlÄ± bir
+uygulama olmamasÄ±na karÅŸÄ±n kullanÄ±cÄ±larÄ±n her sisteme baÄŸlanÄ±ÅŸÄ±nda
+deÄŸiÅŸik bir mesajla karÅŸÄ±laÅŸmalarÄ±nÄ± saÄŸlar.
 
-%description -l uk
-ãÅ ÚÁ×ÖÄÉ ĞÏĞÕÌÑÒÎÁ ĞÒÏÇÒÁÍÁ fortune. ğÒÉ ÚÁĞÕÓËÕ ×ÏÎÁ ÄÒÕËÕ¤
-×ÉĞÁÄËÏ×Ï ×ÉÂÒÁÎÅ Ú ÂÁÚÉ ĞÏ×¦ÄÏÍÌÅÎÎÑ. ñË ĞÒÁ×ÉÌÏ §§ ×ÉËÌÉË ×ËÌÀŞÁÀÔØ
-× ÆÁÊÌ .login ËÏÒÉÓÔÕ×ÁŞÁÍ ÓÉÓÔÅÍÉ, × ÒÅÚÕÌØÔÁÔ¦ ŞÏÇÏ ×ÏÎÉ ËÏÖÎÏÇÏ
-ÒÁÚÕ ĞÒÉ ×ÈÏÄ¦ × ÓÉÓÔÅÍÕ ÂÁŞÁÔØ ÎÏ×Å ĞÏ×¦ÄÏÍÌÅÎÎÑ.
+%description -l uk.UTF-8
+Ğ¦Ğµ Ğ·Ğ°Ğ²Ğ¶Ğ´Ğ¸ Ğ¿Ğ¾Ğ¿ÑƒĞ»ÑÑ€Ğ½Ğ° Ğ¿Ñ€Ğ¾Ğ³Ñ€Ğ°Ğ¼Ğ° fortune. ĞŸÑ€Ğ¸ Ğ·Ğ°Ğ¿ÑƒÑĞºÑƒ Ğ²Ğ¾Ğ½Ğ° Ğ´Ñ€ÑƒĞºÑƒÑ”
+Ğ²Ğ¸Ğ¿Ğ°Ğ´ĞºĞ¾Ğ²Ğ¾ Ğ²Ğ¸Ğ±Ñ€Ğ°Ğ½Ğµ Ğ· Ğ±Ğ°Ğ·Ğ¸ Ğ¿Ğ¾Ğ²Ñ–Ğ´Ğ¾Ğ¼Ğ»ĞµĞ½Ğ½Ñ. Ğ¯Ğº Ğ¿Ñ€Ğ°Ğ²Ğ¸Ğ»Ğ¾ Ñ—Ñ— Ğ²Ğ¸ĞºĞ»Ğ¸Ğº Ğ²ĞºĞ»ÑÑ‡Ğ°ÑÑ‚ÑŒ
+Ğ² Ñ„Ğ°Ğ¹Ğ» .login ĞºĞ¾Ñ€Ğ¸ÑÑ‚ÑƒĞ²Ğ°Ñ‡Ğ°Ğ¼ ÑĞ¸ÑÑ‚ĞµĞ¼Ğ¸, Ğ² Ñ€ĞµĞ·ÑƒĞ»ÑŒÑ‚Ğ°Ñ‚Ñ– Ñ‡Ğ¾Ğ³Ğ¾ Ğ²Ğ¾Ğ½Ğ¸ ĞºĞ¾Ğ¶Ğ½Ğ¾Ğ³Ğ¾
+Ñ€Ğ°Ğ·Ñƒ Ğ¿Ñ€Ğ¸ Ğ²Ñ…Ğ¾Ğ´Ñ– Ğ² ÑĞ¸ÑÑ‚ĞµĞ¼Ñƒ Ğ±Ğ°Ñ‡Ğ°Ñ‚ÑŒ Ğ½Ğ¾Ğ²Ğµ Ğ¿Ğ¾Ğ²Ñ–Ğ´Ğ¾Ğ¼Ğ»ĞµĞ½Ğ½Ñ.
 
 %package data
 Summary:	A program which will display a fortune
-Summary(pl):	Program wy¶wietlaj±cy losow± fortunkê
+Summary(pl.UTF-8):   Program wyÅ›wietlajÄ…cy losowÄ… fortunkÄ™
 Group:		Applications/Games
 Requires:	%{name}
 
@@ -127,18 +127,18 @@ bits o' wit.
 
 This package contains English data files for fortune-mod.
 
-%description data -l pl
-Fortune-mod zawiera wci±¿ popularny program fortune ("cytat dnia",
-"przepowiednia"). Masz ochotê na odrobinê m±dro¶ci przekazanej Ci
+%description data -l pl.UTF-8
+Fortune-mod zawiera wciÄ…Å¼ popularny program fortune ("cytat dnia",
+"przepowiednia"). Masz ochotÄ™ na odrobinÄ™ mÄ…droÅ›ci przekazanej Ci
 podczas logowania? Program fortune jest dla Ciebie. Administratorzy z
-poczuciem humoru mog± dodaæ fortune do plików .login u¿ytkowników tak,
-by ka¿dy otrzyma³ swoj± dawkê m±dro¶ci przy logowaniu.
+poczuciem humoru mogÄ… dodaÄ‡ fortune do plikÃ³w .login uÅ¼ytkownikÃ³w tak,
+by kaÅ¼dy otrzymaÅ‚ swojÄ… dawkÄ™ mÄ…droÅ›ci przy logowaniu.
 
 Ten pakiet zawiera angielskie pliki z danymi dla fortune-mod.
 
 %package on-login
 Summary:	Displays fortune cookie on login
-Summary(pl):	Wy¶wietla fortunkê przy logowaniu
+Summary(pl.UTF-8):   WyÅ›wietla fortunkÄ™ przy logowaniu
 Group:		Applications/Games
 Requires:	%{name}
 
@@ -146,8 +146,8 @@ Requires:	%{name}
 If you want fortune cookie to be displayed each time when you log on
 this package is what you need.
 
-%description on-login -l pl
-Je¶li chcesz, ¿eby fortunka by³a wy¶wietlana przy ka¿dym logowaniu ten
+%description on-login -l pl.UTF-8
+JeÅ›li chcesz, Å¼eby fortunka byÅ‚a wyÅ›wietlana przy kaÅ¼dym logowaniu ten
 pakiet jest tym, czego potrzebujesz.
 
 %prep
