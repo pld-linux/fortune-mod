@@ -3,16 +3,16 @@
 %bcond_with	offensive	# include offensive fortunes
 #
 Summary:	A program which will display a fortune
-Summary(cs.UTF-8):   Program suenka s vitbou (fortune cookie) s opravami chyb
-Summary(da.UTF-8):   fortune-cookie program med mange fejl rettelser
-Summary(de.UTF-8):   Glückskeks-Programm mit Bugfixes
-Summary(es.UTF-8):   Fortune: frases famosas y refranes
-Summary(fi.UTF-8):   Paranneltu fortnue-ohjelma
-Summary(fr.UTF-8):   Programme fortune cookie avec correction de bugs
-Summary(pl.UTF-8):   Program wyświetlający losową fortunkę
-Summary(pt_BR.UTF-8):   Fortune: frases famosas e ditados
-Summary(ru.UTF-8):   Программа, печатающая "fortune" (случайно выбранное сообщение)
-Summary(uk.UTF-8):   Програма, яка друкує "fortune" (випадково вибране повідомлення)
+Summary(cs.UTF-8):	Program suenka s vitbou (fortune cookie) s opravami chyb
+Summary(da.UTF-8):	fortune-cookie program med mange fejl rettelser
+Summary(de.UTF-8):	Glückskeks-Programm mit Bugfixes
+Summary(es.UTF-8):	Fortune: frases famosas y refranes
+Summary(fi.UTF-8):	Paranneltu fortnue-ohjelma
+Summary(fr.UTF-8):	Programme fortune cookie avec correction de bugs
+Summary(pl.UTF-8):	Program wyświetlający losową fortunkę
+Summary(pt_BR.UTF-8):	Fortune: frases famosas e ditados
+Summary(ru.UTF-8):	Программа, печатающая "fortune" (случайно выбранное сообщение)
+Summary(uk.UTF-8):	Програма, яка друкує "fortune" (випадково вибране повідомлення)
 Name:		fortune-mod
 Version:	1.99.1
 Release:	3
@@ -111,7 +111,7 @@ değişik bir mesajla karşılaşmalarını sağlar.
 
 %package data
 Summary:	A program which will display a fortune
-Summary(pl.UTF-8):   Program wyświetlający losową fortunkę
+Summary(pl.UTF-8):	Program wyświetlający losową fortunkę
 Group:		Applications/Games
 Requires:	%{name}
 
@@ -138,7 +138,7 @@ Ten pakiet zawiera angielskie pliki z danymi dla fortune-mod.
 
 %package on-login
 Summary:	Displays fortune cookie on login
-Summary(pl.UTF-8):   Wyświetla fortunkę przy logowaniu
+Summary(pl.UTF-8):	Wyświetla fortunkę przy logowaniu
 Group:		Applications/Games
 Requires:	%{name}
 
