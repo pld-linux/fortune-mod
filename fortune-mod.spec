@@ -24,6 +24,7 @@ Source0:	http://www.redellipse.net/code/downloads/%{name}-%{version}.tar.gz
 Source1:	%{name}.sh
 Source2:	%{name}.csh
 Patch0:		%{name}-usage.patch
+Patch1:		%{name}-rot.patch
 BuildRequires:	recode-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -153,6 +154,7 @@ pakiet jest tym, czego potrzebujesz.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__make} \
