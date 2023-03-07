@@ -14,18 +14,20 @@ Summary(pt_BR.UTF-8):	Fortune: frases famosas e ditados
 Summary(ru.UTF-8):	Программа, печатающая "fortune" (случайно выбранное сообщение)
 Summary(uk.UTF-8):	Програма, яка друкує "fortune" (випадково вибране повідомлення)
 Name:		fortune-mod
-Version:	1.99.1
-Release:	5
+Version:	3.18.0
+Release:	1
 License:	BSD
 Group:		Applications/Games
-#Source0:	ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/%{name}-9708.tar.gz
-Source0:	http://www.redellipse.net/code/downloads/%{name}-%{version}.tar.gz
-# Source0-md5:	f208805b3b712e32997d7667e0ec52d8
+Source0:	https://www.shlomifish.org/open-source/projects/fortune-mod/arcs/%{name}-%{version}.tar.xz
+# Source0-md5:	8ab5d3f6818fd4c98eebf6408e65b4a0
 Source1:	%{name}.sh
 Source2:	%{name}.csh
 Patch0:		%{name}-usage.patch
-Patch1:		%{name}-rot.patch
+Patch1:		%{name}-install.patch
+URL:		https://www.shlomifish.org/open-source/projects/fortune-mod/
 BuildRequires:	recode-devel
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -157,27 +159,21 @@ pakiet jest tym, czego potrzebujesz.
 %patch1 -p1
 
 %build
-%{__make} \
-	CFLAGS="%{rpmcflags} \\\$(DEFINES)" \
-	%{?with_offensive:OFFENSIVE=1}
+install -d build
+cd build
+%cmake .. \
+	%{!?with_offensive:-DNO_OFFENSIVE=ON}
 
-%{__make} fortune/fortune.man
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man{1,6},%{_datadir}/games/fortune,/etc/profile.d}
+install -d $RPM_BUILD_ROOT/etc/profile.d
 
-%{__make} install \
-	FORTDIR=$RPM_BUILD_ROOT%{_bindir} \
-	COOKIEDIR=$RPM_BUILD_ROOT%{_datadir}/games/fortunes \
-	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
-	BINMANDIR=$RPM_BUILD_ROOT%{_mandir}/man1 \
-	FORTMANDIR=$RPM_BUILD_ROOT%{_mandir}/man6 \
-	%{?with_offensive:OFFENSIVE=1}
+%{__make} -C build install \
+	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_mandir}/man1/unstr.1*
-
-cp -a %{SOURCE1} %{SOURCE2} $RPM_BUILD_ROOT/etc/profile.d
+cp -p %{SOURCE1} %{SOURCE2} $RPM_BUILD_ROOT/etc/profile.d
 echo '.so strfile.1' > $RPM_BUILD_ROOT%{_mandir}/man1/unstr.1
 
 %clean
@@ -186,16 +182,20 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README ChangeLog TODO
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/fortune
+%attr(755,root,root) %{_bindir}/rot
+%attr(755,root,root) %{_bindir}/strfile
+%attr(755,root,root) %{_bindir}/unstr
 %{_mandir}/man6/fortune.6*
-%{_mandir}/man1/*
+%{_mandir}/man1/strfile.1*
+%{_mandir}/man1/unstr.1*
 %dir %{_datadir}/games/fortunes
 
 %files data
 %defattr(644,root,root,755)
 %{_datadir}/games/fortunes/*
-%defattr(644,root,root,755)
 
 %files on-login
 %defattr(644,root,root,755)
-/etc/profile.d/*
+/etc/profile.d/fortune-mod.csh
+/etc/profile.d/fortune-mod.sh
