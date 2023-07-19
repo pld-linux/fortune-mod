@@ -27,6 +27,7 @@ Patch1:		%{name}-install.patch
 URL:		https://www.shlomifish.org/open-source/projects/fortune-mod/
 BuildRequires:	cmake >= 3.10
 BuildRequires:	recode-devel
+BuildRequires:	rpmbuild(macros) >= 1.605
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
