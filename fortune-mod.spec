@@ -14,12 +14,12 @@ Summary(pt_BR.UTF-8):	Fortune: frases famosas e ditados
 Summary(ru.UTF-8):	Программа, печатающая "fortune" (случайно выбранное сообщение)
 Summary(uk.UTF-8):	Програма, яка друкує "fortune" (випадково вибране повідомлення)
 Name:		fortune-mod
-Version:	3.20.0
+Version:	3.22.0
 Release:	1
 License:	BSD
 Group:		Applications/Games
 Source0:	https://www.shlomifish.org/open-source/projects/fortune-mod/arcs/%{name}-%{version}.tar.xz
-# Source0-md5:	33ec25f3ce075f69f3a8651de64f7aa1
+# Source0-md5:	d69534cb8740ae6fc48349f39610685a
 Source1:	%{name}.sh
 Source2:	%{name}.csh
 Patch0:		%{name}-usage.patch
@@ -185,7 +185,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README ChangeLog TODO
+%doc COPYING.txt ChangeLog Notes Offensive README TODO
 %attr(755,root,root) %{_bindir}/fortune
 %attr(755,root,root) %{_bindir}/rot
 %attr(755,root,root) %{_bindir}/strfile
